@@ -1,0 +1,68 @@
+
+Make a repositery on GIThub and copy the http/SSH key and paste within cloning command
+
+Take a clone on your system in the folder where you want to kept the project and write the following command
+
+git clone <paste the key here></paste>
+
+After clonning the repo make folders at that location
+
+1.baackend
+2.frontend
+
+Now, open backend folder in VScode and initialize project and make pakage.json file by following command
+
+npm init -y
+
+then connect to express server and run the following command 
+ 
+npm install express/npm i express
+
+Which creates nodemodules, package-lock.json 
+
+Now, create server.js and show "hello world" msg through server from express.js site
+
+Important Note!
+Whenever you make any change in any file it terminates the server and you have start again by "node server.js"
+
+To get rid of it run command: npm i -D nodemon(-D is because we have installing it for development purpose)
+
+Change Scripts in package.json 
+
+"dev": "nodemon server.js",
+"start":"node server.js"(This command runs when we deploye our app and nomore changes required)
+
+Connect MongoDB
+
+run command: npm i mongoose(mongoose is an ORM which communicates to MongoDB)
+
+For Validation
+npm i joi
+
+For password hashing
+ 
+npm i bcryptjs 
+
+To filter data and view selected data from an object we have used DTO(Data Transfer Object) as  class i.e:UserDTO
+
+                                 JWT Token
+
+We have used JWT(Json Web Authentication)token, to secure authentincation and only restricted user can access his desired content
+
+JWT has 3 parts(header, payload and signture) which contains its configuration details
+It contains information about encryption algorithm and type of token and our desired information in payload like: user_id, expiry date etc. signature is used for verification
+
+A secret key is generated at server side, and sign through JWT key also verifys through same key. 
+
+To install JWT token use command
+npm i jsonwebtoken
+
+To generate access_token use 'crypto'. By default 'node' has 'crypto'. Use the following command:
+
+Open terminale type 'node' press enter
+
+>const crypto.randomBytes(64).toString('hex') press enter , the key will be generated
+
+Here we'll not send token in Json body but send in cookie becuse its more secure
+To Install cookie
+>npm i cookie-parser
